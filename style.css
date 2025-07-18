@@ -1,9 +1,9 @@
-/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
 body {
     background-color: #000;
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -14,15 +14,15 @@ body {
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: 2.8em;
     text-align: center;
     margin-top: 20px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 h2 {
-    font-size: 1.5em;
-    font-weight: bold;
+    font-size: 1.6em;
+    font-weight: 600;
     margin: 10px 0;
 }
 
@@ -33,63 +33,40 @@ h2 {
     border: 4px solid #00ffe7;
     box-shadow: 0 0 12px #00ffe7, 0 0 25px #00ffe7;
     transition: transform 0.4s ease;
-    object-fit: cover;
 }
 
 .profile-photo:hover {
     transform: scale(1.1);
 }
 
-.title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
 .card {
-    width: 80%;
-    background-color: #111;
+    width: 85%;
+    background: linear-gradient(90deg, #00ffe7 0%, #004b4b 100%);
     padding: 20px;
-    border-radius: 15px;
+    border-radius: 20px;
     margin: 15px 0;
-    transition: all 0.4s ease;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #fff;
     cursor: pointer;
+    transition: all 0.3s ease;
+    color: black;
+    font-size: 1.1em;
+    font-weight: 600;
     position: relative;
-    overflow: hidden;
 }
 
 .card:hover {
-    color: #00ffe7;
-    box-shadow: 0 0 10px #00ffe7;
-}
-
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 200%;
-    height: 100%;
-    background: linear-gradient(120deg, transparent, #00ffe7, transparent);
-    transition: left 0.5s ease;
-}
-
-.card:hover::before {
-    left: 100%;
+    box-shadow: 0 0 20px #00ffe7;
 }
 
 .card.active {
+    background: linear-gradient(90deg, #00c2c2 0%, #002626 100%);
     color: #00ffe7;
 }
 
 .card-content {
     display: none;
-    margin-top: 10px;
-    padding-left: 10px;
+    padding-top: 15px;
+    font-size: 0.95em;
+    font-weight: 400;
     color: #ccc;
 }
 
@@ -98,19 +75,31 @@ h2 {
 }
 
 .sub-heading {
-    font-weight: bold;
     color: #00ffe7;
+    font-weight: 600;
+    margin-top: 15px;
     cursor: pointer;
-    margin: 10px 0 5px 10px;
 }
 
 .sub-details {
     display: none;
-    margin-left: 20px;
-    font-weight: normal;
-    color: #ccc;
-    font-size: 0.95em;
+    padding-left: 15px;
+    font-size: 0.9em;
+    color: #ddd;
+    font-weight: 400;
 }
 
 .sub-heading.active + .sub-details {
-    dis
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 95%;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+}
