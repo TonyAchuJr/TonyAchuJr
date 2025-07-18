@@ -1,111 +1,58 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #000;
-  color: #fff;
-  line-height: 1.6;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 30px;
+  background-color: #111;
+  color: #f0f0f0;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  border-bottom: 2px solid #444;
-  padding-bottom: 20px;
-  margin-bottom: 30px;
-}
-
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  box-shadow: 0 0 10px cyan;
-}
-
-h1 {
-  font-size: 2.5em;
-  margin: 0;
-}
-
-h2 {
-  margin: 5px 0 10px 0;
-  color: #aaa;
+  text-align: center;
+  padding: 2rem;
+  background-color: #1c1c1c;
 }
 
 .contact {
-  display: flex;
-  gap: 20px;
-  font-size: 1rem;
+  margin-top: 10px;
 }
 
-.contact a,
-.contact span {
-  color: cyan;
+.contact a, .contact span {
+  margin: 0 10px;
+  color: #1e90ff;
   text-decoration: none;
-  transition: all 0.3s;
-}
-
-.contact a:hover {
-  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
-}
-
-section {
-  margin-bottom: 40px;
-}
-
-h3 {
-  font-size: 1.8em;
-  color: #0ff;
-  border-bottom: 1px solid #0ff;
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-ul li {
-  margin-bottom: 15px;
-  background: #111;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 5px #222;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-ul li:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 15px #0ff;
-}
-
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skills span {
-  background: #111;
-  padding: 10px 15px;
-  border-radius: 20px;
-  border: 1px solid #0ff;
-  color: #0ff;
   font-weight: bold;
-  transition: 0.3s;
 }
 
-.skills span:hover {
-  background: #0ff;
-  color: #000;
-  box-shadow: 0 0 15px #0ff;
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.card {
+  background-color: #1e1e1e;
+  margin: 1rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  transition: all 0.3s ease;
   cursor: pointer;
+  border: 1px solid #333;
+}
+
+.card:hover {
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.content {
+  display: none;
+  margin-top: 1rem;
+  color: #ddd;
+}
+
+.content ul {
+  padding-left: 20px;
 }
