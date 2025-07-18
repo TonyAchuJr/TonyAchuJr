@@ -2,60 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aswin Vignesh R - Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aswin Vignesh R Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="your-photo.jpg" alt="Profile Photo" class="profile-pic" />
-      <div>
-        <h1>ASWIN VIGNESH R</h1>
-        <h2>Assistant Professor</h2>
-        <div class="contact">
-          <a href="mailto:aswinvigneshr@gmail.com">📧 Email</a>
-          <a href="https://github.com/yourusername" target="_blank">💻 GitHub</a>
-          <span>📞 +91 90809 30418</span>
-        </div>
-      </div>
-    </header>
+  <header>
+    <h1>ASWIN VIGNESH R</h1>
+    <p>Assistant Professor</p>
+    <div class="contact">
+      <a href="mailto:aswinvigneshr@gmail.com">📧 Email</a>
+      <a href="https://github.com/" target="_blank">💻 GitHub</a>
+      <span>📞 +91 90809 30418</span>
+    </div>
+  </header>
 
-    <section>
-      <h3>ABOUT ME</h3>
-      <p>Skilled in troubleshooting, network configuration, and implementing technology solutions that improve performance and accessibility. Passionate about leveraging technology to solve real-world problems, with a keen interest in emerging fields like IoT, AI, and cybersecurity. Known for being dependable, fast-learning, and solution-oriented in dynamic environments.</p>
-    </section>
-
-    <section>
-      <h3>EDUCATION</h3>
-      <ul>
-        <li><strong>Ph.D. in Computer Science</strong> – Karpagam University (2024–present)<br/>Specializing in Internet of Things (IoT).</li>
-        <li><strong>Master of Science in Computer Science</strong> – Karpagam University (2020–2022)<br/>Aggregate: 89%, Final Year Project: Cloud Computing</li>
-        <li><strong>Bachelor of Science in Computer Science</strong> – Karpagam University (2017–2020)<br/>Aggregate: 85%, Final Year Project: Voice Assistant ATM</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>EXPERIENCE</h3>
-      <ul>
-        <li><strong>Network Analyst</strong> – Karpagam University (2025–present)<br/>Promoted as Network Analyst; managed Fortigate Firewall settings and network layers.</li>
-        <li><strong>Lab Technician</strong> – Karpagam University (2023–present)<br/>Maintained and troubleshooted hardware devices, supported faculty and students during lab sessions.</li>
-        <li><strong>Process Executive – Claims Adjudicator</strong> – Cognizant (2022–2023)<br/>Worked under the JHCC project; coordinated with clients and managed medical payments and ticket resolutions.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h3>SKILLS</h3>
-      <div class="skills">
-        <span>Network</span>
-        <span>Python</span>
-        <span>Drawing</span>
-        <span>UI/UX Design</span>
-        <span>Front-End</span>
-        <span>Stock Maintenance</span>
-        <span>C/C++</span>
+  <main>
+    <section class="card" onclick="toggleContent('about')">
+      <h2>ABOUT ME</h2>
+      <div class="content" id="about">
+        <p>
+          Skilled in troubleshooting, network configuration, and implementing technology
+          solutions that improve performance and accessibility...
+        </p>
       </div>
     </section>
-  </div>
+
+    <section class="card" onclick="toggleContent('education')">
+      <h2>EDUCATION</h2>
+      <div class="content" id="education">
+        <p><strong>Ph.D. in Computer Science</strong> – Karpagam University (2024–present)<br/>Specializing in IoT</p>
+        <p><strong>Master of Science</strong> – Karpagam University (2020–2022)<br/>Aggregate: 89%, Final Project: Cloud Computing</p>
+        <p><strong>Bachelor of Science</strong> – Karpagam University (2017–2020)<br/>Aggregate: 85%, Final Project: Voice Assistant ATM</p>
+      </div>
+    </section>
+
+    <section class="card" onclick="toggleContent('experience')">
+      <h2>EXPERIENCE</h2>
+      <div class="content" id="experience">
+        <p><strong>Network Analyst</strong> – Karpagam University (2025–present)</p>
+        <p><strong>Lab Technician</strong> – Karpagam University (2023–present)</p>
+        <p><strong>Process Executive</strong> – Cognizant (2022–2023)</p>
+      </div>
+    </section>
+
+    <section class="card" onclick="toggleContent('skills')">
+      <h2>SKILLS</h2>
+      <div class="content" id="skills">
+        <ul>
+          <li>Network</li>
+          <li>Python</li>
+          <li>UI/UX Design</li>
+          <li>Drawing</li>
+          <li>Front-End</li>
+          <li>C/C++</li>
+          <li>Stock Maintenance</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
