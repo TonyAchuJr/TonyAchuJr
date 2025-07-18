@@ -1,15 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&display=swap');
+
+:root {
+    --neon: #00ffe7;
+    --bg-dark: #000;
+    --text-light: #ffffff;
+    --text-muted: #ccc;
+    --card-bg: #111;
+    --font-main: 'Rajdhani', sans-serif;
+}
 
 body {
-    background-color: #000;
-    color: white;
-    font-family: 'Orbitron', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-main);
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     min-height: 100vh;
 }
 
@@ -18,57 +26,49 @@ h1 {
     text-align: center;
     margin-top: 20px;
     font-weight: 700;
-    color: #00ffe7;
+    color: var(--neon);
 }
 
 h2 {
     font-size: 1.6em;
     font-weight: 700;
     margin: 10px 0;
-    color: #00ffe7;
+    color: var(--neon);
 }
 
 .profile-photo {
     width: 160px;
     height: 160px;
     clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
-    border: 5px solid #00ffe7;
-    box-shadow: 0 0 20px #00ffe7, 0 0 40px #00ffe7;
-    transition: transform 0.4s ease;
+    border: 5px solid var(--neon);
+    box-shadow: 0 0 20px var(--neon), 0 0 40px var(--neon);
     margin-top: 20px;
+    transition: transform 0.4s ease;
 }
 
 .profile-photo:hover {
     transform: scale(1.1);
 }
 
-.title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-}
-
 .card {
     width: 80%;
-    background-color: #111;
+    background-color: var(--card-bg);
     padding: 20px;
     border-radius: 20px;
     margin: 15px 0;
-    transition: all 0.4s ease;
-    font-size: 1.2em;
+    font-size: 1.3em;
     font-weight: 600;
-    color: white;
-    background: linear-gradient(90deg, #222, #111);
     cursor: pointer;
     position: relative;
+    border: 1px solid var(--neon);
+    color: var(--text-light);
+    transition: background 0.4s ease, color 0.3s ease, box-shadow 0.4s ease;
     overflow: hidden;
-    border: 1px solid #00ffe7;
 }
 
 .card:hover {
-    box-shadow: 0 0 20px #00ffe7;
-    background: radial-gradient(circle at var(--x) var(--y), #00ffe7, #111);
+    box-shadow: 0 0 20px var(--neon);
+    background: radial-gradient(circle at var(--x) var(--y), var(--neon), var(--card-bg));
 }
 
 .card::before {
@@ -78,7 +78,7 @@ h2 {
     left: -100%;
     width: 200%;
     height: 100%;
-    background: linear-gradient(120deg, transparent, #00ffe7, transparent);
+    background: linear-gradient(120deg, transparent, var(--neon), transparent);
     transition: left 0.5s ease;
 }
 
@@ -87,66 +87,6 @@ h2 {
 }
 
 .card.active {
-    background-color: #00ffe7;
-    color: #000;
-    border: 1px solid #00ffe7;
-}
-
-.card-content {
-    display: none;
-    margin-top: 10px;
-    padding-left: 10px;
-    color: #ccc;
-}
-
-.card.active .card-content {
-    display: block;
-}
-
-.sub-heading {
-    font-weight: 700;
-    color: #00ffe7;
-    cursor: pointer;
-    margin: 10px 0 5px 10px;
-    font-size: 1.1em;
-}
-
-.sub-details {
-    display: none;
-    margin-left: 20px;
-    font-weight: 400;
-    color: #ccc;
-    font-size: 0.95em;
-}
-
-.sub-heading.active + .sub-details {
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .card {
-        width: 95%;
-    }
-
-    .profile-photo {
-        width: 120px;
-        height: 120px;
-    }
-}
-
-.card {
-    --x: 50%;
-    --y: 50%;
-}
-
-.card:hover {
-    background: radial-gradient(circle at var(--x) var(--y), #00ffe7, #111);
-}
-
-.card {
-    font-family: 'Orbitron', sans-serif;
-}
-
-.card-content, .sub-details, .sub-heading {
-    font-family: 'Orbitron', sans-serif;
-}
+    background-color: var(--neon);
+    color: black;
+    font-weight: 7
