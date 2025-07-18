@@ -1,3 +1,5 @@
+/* styles.css */
+
 body {
     background-color: #000;
     color: white;
@@ -31,6 +33,7 @@ h2 {
     border: 4px solid #00ffe7;
     box-shadow: 0 0 12px #00ffe7, 0 0 25px #00ffe7;
     transition: transform 0.4s ease;
+    object-fit: cover;
 }
 
 .profile-photo:hover {
@@ -110,16 +113,4 @@ h2 {
 }
 
 .sub-heading.active + .sub-details {
-    display: block;
-}
-
-@media (max-width: 768px) {
-    .card {
-        width: 95%;
-    }
-
-    .profile-photo {
-        width: 100px;
-        height: 100px;
-    }
-}
+    dis
