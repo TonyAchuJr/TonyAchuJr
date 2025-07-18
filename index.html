@@ -2,59 +2,73 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Aswin Vignesh R</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aswin Vignesh R Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="container">
-    <img src="your-photo.jpg" alt="Profile Photo" class="profile-photo" />
-    <h1>Aswin Vignesh R</h1>
-    <p class="role">Assistant Professor</p>
+    <div class="profile">
+      <div class="hexagon">
+        <img src="profile.jpg" alt="Profile Photo" />
+      </div>
+      <h1>ASWIN VIGNESH R</h1>
+      <h2>Assistant Professor</h2>
+    </div>
 
-    <div class="card-grid">
-      <div class="card" onclick="toggleContent(this)">
-        <h2>About Me</h2>
-        <div class="card-content">
-          <p>Skilled in troubleshooting, network configuration, and implementing tech solutions. Passionate about IoT, AI, and cybersecurity.</p>
-        </div>
+    <div class="cards">
+      <div class="card" onclick="toggleSection('about')">About Me</div>
+      <div class="content" id="about">
+        Skilled in troubleshooting, network configuration... (rest of your about me text)
       </div>
 
-      <div class="card" onclick="toggleContent(this)">
-        <h2>Education</h2>
-        <div class="card-content">
-          <p><strong>Ph.D. in Computer Science</strong> – Karpagam University (2024–present)</p>
-          <p><strong>Master of Science</strong> – Karpagam University (2020–2022), 89%</p>
-          <p><strong>Bachelor of Science</strong> – Karpagam University (2017–2020), 85%</p>
-        </div>
+      <div class="card" onclick="toggleSubSections('education')">Education</div>
+      <div class="content" id="education">
+        <div class="sub-card" onclick="toggleDetails('phd')">Ph.D.</div>
+        <div class="details" id="phd">Currently undertaking doctoral studies in Computer Science, specializing in IoT.</div>
+
+        <div class="sub-card" onclick="toggleDetails('msc')">M.Sc.</div>
+        <div class="details" id="msc">Completed with 89%, project: Cloud Computing.</div>
+
+        <div class="sub-card" onclick="toggleDetails('bsc')">B.Sc.</div>
+        <div class="details" id="bsc">Completed with 85%, project: Voice Assistant ATM.</div>
       </div>
 
-      <div class="card" onclick="toggleContent(this)">
-        <h2>Work Experience</h2>
-        <div class="card-content">
-          <p><strong>Network Analyst</strong> – 2025–present</p>
-          <p><strong>Lab Technician</strong> – 2023–present</p>
-        </div>
+      <div class="card" onclick="toggleSubSections('experience')">Work Experience</div>
+      <div class="content" id="experience">
+        <div class="sub-card" onclick="toggleDetails('cognizant')">Cognizant</div>
+        <div class="details" id="cognizant">Claims Adjudicator for JHCC project, interacted with clients and processed claims.</div>
+
+        <div class="sub-card" onclick="toggleDetails('lab')">Lab Technician</div>
+        <div class="details" id="lab">Maintained and troubleshooted lab hardware; assisted students during sessions.</div>
+
+        <div class="sub-card" onclick="toggleDetails('analyst')">Network Analyst</div>
+        <div class="details" id="analyst">Configured Fortigate Firewall for institutional networks.</div>
       </div>
 
-      <div class="card" onclick="toggleContent(this)">
-        <h2>Skills</h2>
-        <div class="card-content">
-          <ul>
-            <li>Networking</li>
-            <li>IoT</li>
-            <li>Cybersecurity</li>
-            <li>Python</li>
-            <li>Machine Learning Basics</li>
-          </ul>
-        </div>
+      <div class="card" onclick="toggleSection('skills')">Skills</div>
+      <div class="content" id="skills">
+        Network, Python, Front-End, Drawing, C/C++, Stock Maintenance, UI/UX Design
       </div>
     </div>
   </div>
 
   <script>
-    function toggleContent(card) {
-      card.classList.toggle("expanded");
+    function toggleSection(id) {
+      document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
+      document.querySelector(`#${id}`).style.display = 'block';
+      event.currentTarget.classList.add('active');
+    }
+
+    function toggleSubSections(id) {
+      toggleSection(id);
+      document.querySelectorAll(`#${id} .details`).forEach(el => el.style.display = 'none');
+    }
+
+    function toggleDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
     }
   </script>
 </body>
