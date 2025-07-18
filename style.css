@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 body {
     background-color: #000;
     color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -22,52 +22,78 @@ h1 {
 
 h2 {
     font-size: 1.6em;
-    font-weight: 600;
+    font-weight: 700;
     margin: 10px 0;
 }
 
 .profile-photo {
-    width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
     clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
-    border: 4px solid #00ffe7;
-    box-shadow: 0 0 12px #00ffe7, 0 0 25px #00ffe7;
+    border: 5px solid #00ffe7;
+    box-shadow: 0 0 20px #00ffe7, 0 0 40px #00ffe7;
     transition: transform 0.4s ease;
+    margin-top: 20px;
 }
 
 .profile-photo:hover {
     transform: scale(1.1);
 }
 
+.title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
 .card {
-    width: 85%;
-    background: linear-gradient(90deg, #00ffe7 0%, #004b4b 100%);
+    width: 80%;
+    background-color: #111;
     padding: 20px;
     border-radius: 20px;
     margin: 15px 0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    color: black;
-    font-size: 1.1em;
+    transition: all 0.4s ease;
+    font-size: 1.2em;
     font-weight: 600;
+    color: black;
+    background: linear-gradient(90deg, #00ffe7, #00bfa6);
+    cursor: pointer;
     position: relative;
+    overflow: hidden;
+    border: 1px solid #00ffe7;
 }
 
 .card:hover {
-    box-shadow: 0 0 20px #00ffe7;
+    box-shadow: 0 0 15px #00ffe7;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, #00ffe7, transparent);
+    transition: left 0.5s ease;
+}
+
+.card:hover::before {
+    left: 100%;
 }
 
 .card.active {
-    background: linear-gradient(90deg, #00c2c2 0%, #002626 100%);
-    color: #00ffe7;
+    background-color: #00ffe7;
+    color: black;
+    border: 1px solid #00ffe7;
 }
 
 .card-content {
     display: none;
-    padding-top: 15px;
-    font-size: 0.95em;
-    font-weight: 400;
-    color: #ccc;
+    margin-top: 10px;
+    padding-left: 10px;
+    color: black;
 }
 
 .card.active .card-content {
@@ -75,18 +101,18 @@ h2 {
 }
 
 .sub-heading {
-    color: #00ffe7;
-    font-weight: 600;
-    margin-top: 15px;
+    font-weight: 700;
+    color: black;
     cursor: pointer;
+    margin: 10px 0 5px 10px;
 }
 
 .sub-details {
     display: none;
-    padding-left: 15px;
-    font-size: 0.9em;
-    color: #ddd;
+    margin-left: 20px;
     font-weight: 400;
+    color: black;
+    font-size: 0.95em;
 }
 
 .sub-heading.active + .sub-details {
@@ -99,7 +125,7 @@ h2 {
     }
 
     .profile-photo {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
     }
 }
