@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
     background-color: #000;
     color: white;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Orbitron', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -18,12 +18,14 @@ h1 {
     text-align: center;
     margin-top: 20px;
     font-weight: 700;
+    color: #00ffe7;
 }
 
 h2 {
     font-size: 1.6em;
     font-weight: 700;
     margin: 10px 0;
+    color: #00ffe7;
 }
 
 .profile-photo {
@@ -56,17 +58,17 @@ h2 {
     transition: all 0.4s ease;
     font-size: 1.2em;
     font-weight: 600;
-    color: black;
-    background: linear-gradient(90deg, #00ffe7, #00bfa6);
+    color: white;
+    background: linear-gradient(90deg, #222, #111);
     cursor: pointer;
     position: relative;
     overflow: hidden;
     border: 1px solid #00ffe7;
-    font-family: 'Inter', sans-serif;
 }
 
 .card:hover {
-    box-shadow: 0 0 15px #00ffe7;
+    box-shadow: 0 0 20px #00ffe7;
+    background: radial-gradient(circle at var(--x) var(--y), #00ffe7, #111);
 }
 
 .card::before {
@@ -86,7 +88,7 @@ h2 {
 
 .card.active {
     background-color: #00ffe7;
-    color: black;
+    color: #000;
     border: 1px solid #00ffe7;
 }
 
@@ -94,8 +96,7 @@ h2 {
     display: none;
     margin-top: 10px;
     padding-left: 10px;
-    color: black;
-    font-family: 'Inter', sans-serif;
+    color: #ccc;
 }
 
 .card.active .card-content {
@@ -104,19 +105,18 @@ h2 {
 
 .sub-heading {
     font-weight: 700;
-    color: black;
+    color: #00ffe7;
     cursor: pointer;
     margin: 10px 0 5px 10px;
-    font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
 }
 
 .sub-details {
     display: none;
     margin-left: 20px;
     font-weight: 400;
-    color: black;
+    color: #ccc;
     font-size: 0.95em;
-    font-family: 'Inter', sans-serif;
 }
 
 .sub-heading.active + .sub-details {
@@ -132,4 +132,21 @@ h2 {
         width: 120px;
         height: 120px;
     }
+}
+
+.card {
+    --x: 50%;
+    --y: 50%;
+}
+
+.card:hover {
+    background: radial-gradient(circle at var(--x) var(--y), #00ffe7, #111);
+}
+
+.card {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.card-content, .sub-details, .sub-heading {
+    font-family: 'Orbitron', sans-serif;
 }
