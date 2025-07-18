@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body {
     background-color: #000;
     color: white;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -62,6 +62,7 @@ h2 {
     position: relative;
     overflow: hidden;
     border: 1px solid #00ffe7;
+    font-family: 'Inter', sans-serif;
 }
 
 .card:hover {
@@ -94,6 +95,7 @@ h2 {
     margin-top: 10px;
     padding-left: 10px;
     color: black;
+    font-family: 'Inter', sans-serif;
 }
 
 .card.active .card-content {
@@ -105,6 +107,7 @@ h2 {
     color: black;
     cursor: pointer;
     margin: 10px 0 5px 10px;
+    font-family: 'Inter', sans-serif;
 }
 
 .sub-details {
@@ -113,6 +116,7 @@ h2 {
     font-weight: 400;
     color: black;
     font-size: 0.95em;
+    font-family: 'Inter', sans-serif;
 }
 
 .sub-heading.active + .sub-details {
