@@ -3,73 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aswin Vignesh R Portfolio</title>
+  <title>QuickCart Local Finder</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="profile">
-      <div class="hexagon">
-        <img src="profile.jpg" alt="Profile Photo" />
-      </div>
-      <h1>ASWIN VIGNESH R</h1>
-      <h2>---------------</h2>
-    </div>
+  <header class="hero">
+    <h1>QuickCart Local Finder</h1>
+    <p>Search products, buy online instantly, or visit a nearby store today.</p>
+  </header>
 
-    <div class="cards">
-      <div class="card" onclick="toggleSection('about')">About Me</div>
-      <div class="content" id="about">
-        A motivated and adaptable professional with a blend of corporate and academic experience, eager to contribute my skills to the dynamic team.
+  <main class="layout">
+    <section class="panel auth-panel">
+      <h2>Account Access</h2>
+      <div class="auth-toggle">
+        <button class="tab active" data-target="buyer">Buyer Login</button>
+        <button class="tab" data-target="seller">Seller Login</button>
       </div>
 
-      <div class="card" onclick="toggleSubSections('education')">Education</div>
-      <div class="content" id="education">
-        <div class="sub-card" onclick="toggleSubSections('phd')">Ph.D.</div>
-        <div class="details" id="phd">Currently undertaking doctoral studies in Computer Science, specializing in IoT.</div>
+      <div class="auth-forms">
+        <form id="registerForm" class="card-block">
+          <h3>Register</h3>
+          <label>Username
+            <input type="text" id="regUsername" required />
+          </label>
+          <label>Password
+            <input type="password" id="regPassword" required minlength="6" />
+          </label>
+          <label>Role
+            <select id="regRole">
+              <option value="buyer">Buyer</option>
+              <option value="seller">Seller</option>
+            </select>
+          </label>
+          <label class="seller-only hidden">Store Name
+            <input type="text" id="regStoreName" />
+          </label>
+          <label class="seller-only hidden">Store Address
+            <input type="text" id="regStoreAddress" />
+          </label>
+          <button type="submit">Create Account</button>
+          <p class="help">A unique user ID is auto-generated for each account.</p>
+        </form>
 
-        <div class="sub-card" onclick="toggleSubSections('msc')">M.Sc.</div>
-        <div class="details" id="msc">Completed with 89%, project: Cloud Computing.</div>
+        <form id="loginForm" class="card-block">
+          <h3 id="loginTitle">Buyer Login</h3>
+          <label>Username
+            <input type="text" id="loginUsername" required />
+          </label>
+          <label>Password
+            <input type="password" id="loginPassword" required />
+          </label>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+      <div id="authMessage" class="message"></div>
+      <div id="sessionInfo" class="session"></div>
+    </section>
 
-        <div class="sub-card" onclick="toggleSubSections('bsc')">B.Sc.</div>
-        <div class="details" id="bsc">Completed with 85%, project: Voice Assistant ATM.</div>
+    <section class="panel marketplace-panel">
+      <h2>Marketplace</h2>
+      <div class="search-row">
+        <input type="text" id="searchInput" placeholder="Search products..." />
+        <select id="categoryFilter">
+          <option value="all">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Home">Home</option>
+          <option value="Grocery">Grocery</option>
+          <option value="Fashion">Fashion</option>
+        </select>
+        <select id="availabilityFilter">
+          <option value="all">All Availability</option>
+          <option value="online">Online Available</option>
+          <option value="store">In-Store Available</option>
+        </select>
       </div>
 
-      <div class="card" onclick="toggleSubSections('experience')">Work Experience</div>
-      <div class="content" id="experience">
-        <div class="sub-card" onclick="toggleDetails('cognizant')">Cognizant</div>
-        <div class="details" id="cognizant">Claims Adjudicator for JHCC project, interacted with clients and processed claims.</div>
-
-        <div class="sub-card" onclick="toggleDetails('lab')">Lab Technician</div>
-        <div class="details" id="lab">Maintained and troubleshooted lab hardware; assisted students during sessions.</div>
-
-        <div class="sub-card" onclick="toggleDetails('analyst')">Network Analyst</div>
-        <div class="details" id="analyst">Configured Fortigate Firewall for institutional networks.</div>
+      <div class="actions-row">
+        <button id="nearMeBtn" class="secondary">Check Available Near Me</button>
+        <button id="buyOnlineBtn">Buy Selected Product Online</button>
       </div>
 
-      <div class="card" onclick="toggleSection('skills')">Skills</div>
-      <div class="content" id="skills">
-        Network, Python, Front-End, Drawing, C/C++, Stock Maintenance, UI/UX Design
-      </div>
-    </div>
-  </div>
+      <div id="productList" class="product-list"></div>
+      <div id="nearMeResults" class="card-block"></div>
+    </section>
 
-  <script>
-    function toggleSection(id) {
-      document.querySelectorAll('.content').forEach(el => el.style.display = 'none');
-      document.querySelectorAll('.card').forEach(card => card.classList.remove('active'));
-      document.querySelector(`#${id}`).style.display = 'block';
-      event.currentTarget.classList.add('active');
-    }
+    <section class="panel seller-panel" id="sellerPanel">
+      <h2>Seller Product Listing</h2>
+      <p class="help">Seller accounts can publish products and store details for local buyers.</p>
+      <form id="sellerProductForm" class="card-block">
+        <label>Product Name
+          <input type="text" id="sellerProductName" required />
+        </label>
+        <label>Category
+          <select id="sellerCategory" required>
+            <option value="Electronics">Electronics</option>
+            <option value="Home">Home</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Fashion">Fashion</option>
+          </select>
+        </label>
+        <label>Price (USD)
+          <input type="number" id="sellerPrice" min="1" required />
+        </label>
+        <label>Online Available
+          <select id="sellerOnline">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </label>
+        <label>Store Available
+          <select id="sellerStore">
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+          </select>
+        </label>
+        <label>Store Name
+          <input type="text" id="sellerStoreName" required />
+        </label>
+        <label>Store Address
+          <input type="text" id="sellerStoreAddress" required />
+        </label>
+        <button type="submit">List Product</button>
+      </form>
+    </section>
+  </main>
 
-    function toggleSubSections(id) {
-      toggleSection(id);
-      document.querySelectorAll(`#${id} .details`).forEach(el => el.style.display = 'none');
-    }
-
-    function toggleDetails(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === 'block' ? 'none' : 'block';
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
